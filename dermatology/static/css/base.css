@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  font-weight: 600;
+  font-family: "poppins";
+
+
+}
+body{
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  background-color: rgb(248, 246, 242);
+  overflow-x:visible
+}
+
+li{
+  list-style: none;
+
+}
+a {
+  text-decoration: none;
+  color: black;
+  
+}
+a:hover{
+  color:rgba(175, 45, 45, 0.918) ;
+}
+
+/* messages */
+
+.messages {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 2;
+  width: 100%;
+  border-radius: 0.45rem;
+  margin-bottom: 1rem;
+}
+.alert {
+  margin-bottom: 0;
+}
+
+.close-btn {
+  padding: .4rem;
+  font-size: 16px;
+  align-self: center;
+  cursor: pointer;
+
+  
+}
+.bell {
+  height: 100%;
+}
+
+
+.messages {
+  animation: 250ms ease-in-out 0s 1 messages;
+}
+
+@keyframes messages {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.messages p {
+  align-self: center;
+  font-size: 14px;
+  color:black;
+  line-height: 1.5;
+  margin-bottom: 0%;
+}
+
+.blog-header {
+  border-bottom: 1px solid #e5e5e5;
+  position:fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  /* background-color: rgb(53, 50, 50); */
+  background-color: rgb(231, 230, 230);
+  font-size: 1rem;
+
+}
+
+.title {
+  animation: 250ms ease-in-out 0s 1 dermatology;
+}
+
+@keyframes dermatology {
+  0% {
+    transform: scale(.8);
+  }
+  100% {
+    transform: translateY(1);
+  }
+}
+
+.full-name {
+  text-transform: capitalize;
+  /* color:white; */
+  font-size: 20px;
+  text-align: center;
+  display: inline;
+}
+
+.blog-header-logo:hover {
+  text-decoration: none;
+}
+.join-us {
+  align-items: center;
+}
+
+
+.btn-outline-secondary:hover {
+  background-color: black;
+  color: white;
+}
+
+
+
+.naver {
+  justify-content: space-around;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  z-index: 0;
+
+
+}
+.margin {
+  margin: 0 0.25rem 0 0.25rem;
+}
+.display-sm {
+  display: none;
+}
+.visually-hidden {
+  opacity: 0;
+}
+
+
+.btn-group>a :hover {
+  background-color: rgb(41, 39, 39);
+} 
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.other-links>ul {
+  margin: 1em 13em 2em 13em;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+  padding-left: 9em;
+  padding-right: 9em;
+}
+
+
+
+@media (max-width: 1000px) {
+  .display-lg {
+    display: none;
+  }
+  .hamburger {
+    cursor: pointer;
+    display: block;
+  }
+  .dropdown {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    display: grid;
+    gap: 0 0;
+    grid-template-columns: 35vw 65vw ;
+
+  } 
+  .dropdown-container {
+    
+    background-color: rgb(237, 238, 238);
+    padding: 2em;
+  }
+  .close {
+    cursor: pointer;
+  }
+  .name-close{
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn-group>a :hover {
+    background-color: transparent;
+  } 
+  .name-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+  }
+  .full-name{
+    color: rgb(173, 53, 53);
+  }
+  .routes {
+    padding: 1em;
+    line-height: 2;
+  }
+  .empty-space {
+    width: auto;
+    background-color:rgba(68, 67, 67, 0.398);
+  }
+
+}
+/* generic */
+.btn:focus, .btn:active{
+  outline: none !important;
+  box-shadow: none;
+}
+.container {
+  min-height: 78vh;
+}
+#logoutform{
+  display: none;
+}
+
+/* footer */
+
+footer * {
+  font-weight: 300;
+}
+footer h3 {
+  font-size: 18px;
+
+}
+footer p {
+  font-size: 11px;
+}
+.footer1 {
+  background-color: rgb(44, 44, 44);
+  padding: 2em;
+}
+.footer1 p, .footer1 h3{
+  color: white;
+}
+
+.footer2 {
+  padding: 0.2em;
+
+}
+.footer2 > p {
+  color: black;
+}

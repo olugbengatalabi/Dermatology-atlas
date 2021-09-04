@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  {{disease}}
+{% endblock title %}
+  
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/single.css'%}">
+{% endblock stylesheet %}
+
+
+{% block content %}
+<div class="container">
+
+  <div class="img-set">
+    
+    {% if images %}
+    {% for image in images %}
+    <div>
+      <img src="{{image.image.url}}" alt="{{image.disease}}" srcset="">
+    </div>
+    {% endfor %}
+    {% else %}
+    <h3>No other available image</h3>
+    {% endif %}
+    
+    
+  </div>
+  <div class="add-btn">
+    <button  class= "btn btnn btn-outline-secondary" ><a class = "add-btn-text" href="{%url 'contribution' disease.id %}">Add an image</a></button>
+  </div>
+</div>
+  
+  {% endblock content %}
+  

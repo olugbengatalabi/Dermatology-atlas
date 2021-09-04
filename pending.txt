@@ -1,0 +1,19 @@
+
+pagination of the single pages app
+enable multiple image uploaded
+
+  Authentication
+setup success and failure page
+setup a link to resend verificion code  if email verification failed
+forgot password and change password setup
+social login with google
+
+
+  frontend
+Asynchronous like/upvote system
+use Swiperjs for the image viewing
+change the message background to tinted transparent with a colored border
+
+  misc
+contact us page that sends an email
+brief readme file

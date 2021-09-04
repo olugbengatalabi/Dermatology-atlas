@@ -1,0 +1,129 @@
+
+
+
+form {
+  margin-top: 3rem;
+}
+
+
+
+@media (min-width: 768px) {
+
+}
+
+.flex-auto {
+  flex: 0 0 auto;
+}
+
+.h-250 {
+  height: 250px;
+}
+
+@media (min-width: 768px) {
+  .h-md-250 {
+    height: 250px;
+  }
+}
+
+.btn-group>a :hover {
+
+  background-color: rgb(41, 39, 39);
+}
+.btn-group button{
+  border: 1px solid black;
+  border-radius: 3%;
+  
+  margin: 0 3px 0 3px;
+
+}
+.btn-group a{
+  border: 1px solid black;
+  border-radius: 3%;
+  margin: 0 3px 0 3px;
+}
+.btn-group button,a:focus {
+  box-shadow: none;
+}
+.search-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem ;
+
+}
+.search-group > button {
+  width :5vw;
+  border: 3px solid black;
+}
+
+.search-bar {
+  width: 130px;
+  border: 2px solid black;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  padding: 0 0.5em;
+}
+
+
+/* When the input field gets focus, change its width to 100% */
+.search-bar:focus {
+  width: 100%;
+}
+.contribution{
+  background-color: rgb(36, 36, 36);
+  color: white;
+  font-size: x-small;
+  margin-bottom: 0.3em;
+  border: none;
+  padding:2.5px 4.5px;
+  border-radius: 3px;
+
+}
+.upvote {
+  color: #6c757d;
+  border: none;
+  /* border-color: #6c757d; */
+}
+.upvote:hover {
+  color: rgba(175, 45, 45, 0.918);
+}
+.upvote-background {
+  color:rgba(175, 45, 45, 0.918);
+  transition: color 300ms ease-in-out;
+}
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .blog-header-logo {
+    visibility: hidden;
+  }
+}
+
+
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top:3rem;
+}
+.paginator * .btn-sm {
+  padding: 0%;
+}
+.page-link {
+  color: #6c757d;
+  background-color: white;
+  border: 1px solid #6c757d;
+  transition: background-color,color 300ms ease-in-out;
+}
+.btn-black:hover {
+  background-color: black;
+  color: white;
+
+  margin: 0%;
+}
+

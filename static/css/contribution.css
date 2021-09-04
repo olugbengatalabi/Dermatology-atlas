@@ -1,0 +1,10 @@
+form {
+  margin-top: 10rem;
+  padding: 3rem;
+}
+
+.form-control:focus,
+.form-select:focus{
+  border: 2px solid black;
+  box-shadow: none;
+}

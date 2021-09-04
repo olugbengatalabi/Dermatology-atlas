@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+  Contribution Form
+{% endblock title %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{%static 'css/contribution.css'%}">
+{% endblock stylesheet %}
+
+
+{% block content %}
+<div class="container">
+  <form action="{%url 'contribution' user.id %}" class= "form"enctype="multipart/form-data" method="POST">
+    {% include 'partials/_alerts.html' %}
+    {% csrf_token %}
+    <div>  
+      <div class="mb-3">
+        <select name="name" class="form-select form-select-sm">
+          
+          {% if selected_disease %}
+          <option value= "{{selected_disease.name}}" required selected>{{selected_disease}}</option>
+          {% else %}
+          <option disabled selected>Select Disease</option>
+          {% endif %}
+          {% for disease in diseases  %}
+          <option  value="{{disease.name}}">{{disease.name}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="mb-3">
+        <input required type="file" name="image" class="form-control form-control-sm" aria-label="file input">
+      </div>
+    </div>
+    <br>
+    <div class="mb-3">
+      <input name="note" class="form-control form-control-sm" type="text" placeholder="Extra Notes (optional)"
+      aria-label="Extra Notes (optional)">
+    </div>
+    <button type="submit" class="btn btn-outline-secondary">Submit</button>
+  </form>
+  
+</div>
+  {% endblock content %}
+  
+  

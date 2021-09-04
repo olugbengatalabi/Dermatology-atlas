@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  Create an Account
+{% endblock title %}
+  
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{% static 'css/signup.css'%}">
+{% endblock  %}
+
+{% block content %}
+    {% include 'partials/_alerts.html' %}
+    <main class="form-signin">
+      <form action="{%url 'signup'%}" method="POST">
+        {% csrf_token %}
+        <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal">Create Account here</h1>
+        
+  
+        <label for="first_name" class="visually-hidden">First Name</label>
+        <input type="text" name="first_name" id="inputFirstName" class="form-control mb-4" placeholder="First Name" required autofocus>
+  
+        <label for="inputLastName" class="visually-hidden">Last Name</label>
+        <input type="text" id="inputLastName" name="last_name" class="form-control mb-3" placeholder="Last_Name" required autofocus>
+
+        <label for="inputUserName" class="visually-hidden">UserName</label>
+        <input type="text" id="inputUserName" name="username" class="form-control mb-3" placeholder="UserName... " required autofocus>
+  
+        <label for="inputEmail" class="visually-hidden">Email address</label>
+        <input type="email" id="inputEmail" name="email" class="form-control mb-3" placeholder="Email address" required autofocus>  
+        <label for="inputPassword1" class="visually-hidden">Password</label>
+        <input type="password" id="inputPassword1" name="password1" class="form-control" placeholder="Enter Password" required autofocus>
+  
+        <label for="inputPassword2" class="visually-hidden">Confirm Password</label>
+        <input type="password" id="inputPassword2" class="form-control" name="password2" placeholder="Re-enter Password" required>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-outline-secondary w-100 btn-lg" type="submit">REgister</button>
+        <small class="sign-up-redirect">
+          <p class ="text-muted">Already have an account?</p>
+          <span>
+          <a class ="btn-sm btn btn-outline-secondary" href="{%url 'login'%}">Login</a>
+        </span>
+        </small>
+        <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+      </form>
+    </main>
+      
+{% endblock %}
+
+{% block script %}
+  <!-- <script src="{%static 'js/bootstrap.bundle.min.js' %}"></script> -->
+{% endblock script %}
+  
+

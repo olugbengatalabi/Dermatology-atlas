@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  Homepage
+{% endblock title %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{%static 'css/index.css'%}">
+{% endblock stylesheet %}
+
+{% block content %}
+
+
+
+<main>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <form method="GET" action="{% url 'index'%}" class="search-group" >
+        <input class='search-bar' type="text" name="search" placeholder="Search..">
+      </form>
+      {% include 'partials/_alerts.html' %}
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% if diseases %}
+          {% for disease in diseases %}
+          <div class="">
+            <div class="card shadow-sm">
+              <img src="{{disease.thumbnail.image.url}}" class="bd-placeholder-img card-img-top" width="100%" height="225" role="img"
+                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+          
+              <div class="card-body ">
+                <h5 class="card-title">{{disease.name}}</h5>
+                <!-- <p class="card-text">{{disease.description}}</p> -->
+                <div class=" d-flex justify-content-between align-items-center">
+                  <!-- <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary" href="{%url 'single' disease.id  %}">More Images</a>
+                    <button class=" btn btn-sm btn-outline-secondary upvote" id ={{disease.id}}><i class ='fas fa-thumbs-up'></i> upvote</button>
+                  </div> -->
+                  <div class="">
+                    <a class="btn btn-sm btn-outline-secondary" href="{%url 'single' disease.id  %}">More Images</a>
+                    <button class=" btn btn-sm upvote" id ={{disease.id}}><i class ='fas fa-star'></i>..</button>
+                  </div>
+                  <!-- <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary" href="{%url 'single' disease.id  %}">More Images</a>
+                    <button class=" btn btn-sm btn-outline-secondary upvote" id ={{disease.id}}>upvote</button>
+                  </div> -->
+
+                  <small class="btn btn-outline-secondary contribution">{{disease.view_count}} <span class="fas fa-search"></span></small>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    <!-- pagination -->
+    <div class="paginator ">
+      <div class=" col-md-12">
+    
+        {% if diseases.has_other_pages%}
+        <ul class="pagination">
+    
+          {% if diseases.has_previous %}
+          <li class="btn-sm no-padding">
+            <a href="?page={{diseases.previous_page_number}}" class="page-link btn-black"> &laquo; </a>
+          </li>
+    
+          {% else %}
+          <li class="btn-sm no-padding disabled">
+            <a class="page-link btn-black">&laquo; </a>
+          </li>
+    
+          {% endif %}
+    
+          {% for i in diseases.paginator.page_range %}
+    
+          {% if diseases.number == i %}
+          <li class="btn-sm no-padding ">
+            <a class="page-link btn-black">{{i}}</a>
+          </li>
+          {% else %}
+          <li class=" btn-sm no-padding">
+            <a href="?page={{i}}" class="page-link btn-black">{{i}}</a>
+          </li>
+          {% endif %}
+    
+          {% endfor %}
+    
+          {% if diseases.has_next %}
+          <li class="btn-sm no-padding">
+            <a href="?page={{diseases.next_page_number}} " class="page-link btn-black">&raquo;</a>
+          </li>
+          {% else %}
+          <!-- continue from here -->
+          <li class="btn-sm no-padding disabled">
+            <a class="page-link btn-black">&raquo;</a>
+          </li>
+          {% endif %}
+    
+    
+        </ul>
+        {% else %}
+    
+        {% endif %}
+    
+    
+      </div>
+    </div>
+  </div>
+  
+</main>
+
+{% endblock content %}
+
+  

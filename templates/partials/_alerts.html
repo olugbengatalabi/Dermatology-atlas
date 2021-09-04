@@ -1,0 +1,34 @@
+<!-- {% if messages %}
+<div id="message" class="container-fluid p-0 message">
+  {% for message in messages %}
+  <div class="alert msg-div text-center  alert-dismissible fade show {{message.tags}} alert-dismissible" role="alert">
+    <button type="button" class="btn-close" data-bs--dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <strong class="message">
+      {{message}}
+    </strong>
+  </div>
+  {% endfor %}
+</div>
+{% endif %} -->
+
+{% if messages %}
+    
+  {% for message in messages %}
+  <div class="messages {{message.tags}}" id="message">
+      <span>
+        <i class="fas fa-bell  bell alert dismissible" role="alertdialog" data-bs--dismiss="alert"  style='font-size:12px;color:red'>
+        </i>
+      </span>
+        
+        <p>{{message}}</p>
+      <span>
+        <i class=" close-btn fas fa-times" id="close-btn" style="color:red"></i>
+      </span>
+    
+      
+  </div>
+  {% endfor %}
+
+{% endif %}

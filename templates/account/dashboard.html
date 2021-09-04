@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  Dashboard
+{% endblock title %}
+
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="{%static 'css/dashboard.css'%}">
+{% endblock stylesheet %}
+
+{% block content %}
+  <body class="bg-light">
+    <div class="container">
+      <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
+        <img class="me-3" src="../assets/brand/bootstrap-logo-white.svg" alt="" width="48" height="38">
+        <div class="lh-1">
+          <h1 class="h6 mb-0 text-dark lh-1">Dr {{user.last_name}}.</h1>
+          <small class ="btn btn-outline-secondary verified contribution">
+            Verified
+          </small>
+          
+        </div>
+      </div>
+    
+      <div class="my-3 p-3 bg-body rounded shadow">
+        {% if length %}
+        <h6 class="border-bottom pb-2 mb-0">Contributions <span class ="btn btn-outline-secondary contribution">{{length}}</span></h6>
+
+        
+          <div class="table-responsive">
+            <table class="table  table-sm">
+              <thead>
+                <tr>
+                  <th>S/N</th>
+                  <th>image</th>
+                  <th>Disease</th>
+                  <th>Upload date</th>
+                  <th>status</th>
+                </tr>
+              </thead>
+              {% for image in image_list %}
+              <tbody 
+              {% if not forloop.counter|divisibleby:"2" %}
+                style = 'background-color:rgba(223, 223, 223, 0.172); border: none'
+              {% endif %}
+                >
+                <tr>
+                  <td>{{forloop.counter}}</td>
+                  <td><img src="{{image.image.url}}" alt="" width="30" height="30"></td>
+                  <td>{{image.disease}}</td>
+                  <td>{{image.upload_date}}</td>
+                  {% if image.verified %}
+                  <td>verified</td>
+                  {% else %}
+                  <td>pending</td>
+                  {% endif %}
+                </tr>
+              </tbody>
+              {% endfor %}
+            </table>
+          </div>
+        {% else %}
+          <p class="text-center">when you make a contribution, it will appear here</p>
+        {% endif %}
+
+      </div>
+    </div>
+  </body>
+{% endblock content %}
+  
+  
+  

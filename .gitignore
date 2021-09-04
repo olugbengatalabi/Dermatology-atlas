@@ -1,0 +1,13 @@
+*git 
+*.log
+*.pot
+*.pyc
+__pychache__/
+local_settings.py
+db_sqlite3
+media
+venv
+frontend dummy
+resources
+dist
+todo.txt

@@ -1,0 +1,11 @@
+
+# def contribution(request, user_id):
+#   if request.method == "POST":
+#     name = request.POST["name"]
+#     image = request.post["image"]
+#     user = get_object_or_404(User, id = user_id)
+#     disease = get_object_or_404(Disease, name = name)
+#     DiseaseImage.objects.create(disease = disease, image = image, user = user)
+
+
+    # path("contribution<int:id>", views.single_disease, name="contribution")
