@@ -42,13 +42,12 @@ def signup_view(request):
         else:
           user = User.objects.create_user(email = email, password = password_1, first_name = first_name, last_name= last_name, username = username)
           user.save()
-          auth_token = str(uuid.uuid4())
-          user.profile.auth_token = auth_token
-          user.save()
-          print(user.profile.auth_token)
-          verification_mail_sender(email, auth_token)
-          messages.success(request, "You're now registered, check your email to verify your account")
-          return redirect("token_sent")
+          # auth_token = str(uuid.uuid4())
+          # user.profile.auth_token = auth_token
+          # user.save()
+          # verification_mail_sender(email, auth_token)
+          messages.success(request, "You're now registered, kindly login")
+          return redirect("login")
 
 
       else:
@@ -58,36 +57,36 @@ def signup_view(request):
   return render(request, "account/signup.html")
 
 
-def token_sent(request):
-  return render(request, "account/token_sent.html")
+# def token_sent(request):
+#   return render(request, "account/token_sent.html")
 
 
-def verification_mail_sender(email, auth_token):
-  subject = "Account Verification"
-  message = f'Hi click on the link to verify your account http://127.0.0.1:8000/account/verify/{auth_token}'
-  email_from = settings.EMAIL_HOST_USER
-  recipient_list = [email]
-  send_mail(subject, message, email_from, recipient_list)
+# def verification_mail_sender(email, auth_token):
+#   subject = "Account Verification"
+#   message = f'Hi click on the link to verify your account http://127.0.0.1:8000/account/verify/{auth_token}'
+#   email_from = settings.EMAIL_HOST_USER
+#   recipient_list = [email]
+#   send_mail(subject, message, email_from, recipient_list)
 
-def verify(request, auth_token):
-  profile_obj = get_object_or_404(Profile, auth_token = auth_token)
-  if profile_obj:
-    if profile_obj.is_verified:
-      messages.error(request, "Acount is already verified, no need to re-verify")
-    else:
-      profile_obj.is_verified = True
-      profile_obj.save()
-      messages.success(request, "Your account has been verified")
-    return redirect(("login"))
-  else:
-    return redirect("verification_error")
+# def verify(request, auth_token):
+#   profile_obj = get_object_or_404(Profile, auth_token = auth_token)
+#   if profile_obj:
+#     if profile_obj.is_verified:
+#       messages.error(request, "Acount is already verified, no need to re-verify")
+#     else:
+#       profile_obj.is_verified = True
+#       profile_obj.save()
+#       messages.success(request, "Your account has been verified")
+#     return redirect(("login"))
+#   else:
+#     return redirect("verification_error")
 
-def verification_error(request):
-  # if there is a verification error, add an option to send the verification message again
-  return render(request, "verification_error.html")
+# def verification_error(request):
+#   # if there is a verification error, add an option to send the verification message again
+#   return render(request, "verification_error.html")
 
-def success(request):
-  return render(request, "success.html")
+# def success(request):
+#   return render(request, "success.html")
 
 
 # def login_view(request):
@@ -123,9 +122,9 @@ def login_view(request):
       if user is None :
         messages.error(request, "OOps! Invalid credentials")
         return redirect("login")
-      elif not user.profile.is_verified:
-        messages.error(request, "You have to verify your account before you can login. check your email for the verification message")
-        return redirect("login")
+      # elif not user.profile.is_verified:
+      #   messages.error(request, "You have to verify your account before you can login. check your email for the verification message")
+      #   return redirect("login")
 
       else:
           auth.login(request, user)
