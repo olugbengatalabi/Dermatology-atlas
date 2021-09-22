@@ -8,10 +8,9 @@ from .models import Disease, DiseaseImage
 from django.contrib.auth.decorators import login_required
 from django.core.files.storage import FileSystemStorage
 from django.core.mail import send_mail
-
 # Create your views here.
 def index(request):
-  queryset = Disease.objects.filter(featured=True)
+  queryset = Disease.objects.filter(featured=True).order_by("-view_count")
   if request.method == "GET":
     if "search" in request.GET:
       search= request.GET["search"]
@@ -51,6 +50,7 @@ def contribution(request, disease_id = 0):
         image = request.FILES["image"]
         note = request.POST["note"]
         user = request.user
+        print(user.email)
         disease = get_object_or_404(Disease, name = name)
         fs = FileSystemStorage()
         filename = fs.save(image.name, image)
@@ -60,12 +60,12 @@ def contribution(request, disease_id = 0):
         send_mail(
           "Dermatology Atlas thanks you for your contribution",
           "Thank you for your contribution, our team will verify the image.",
+          "oluwagbengatalabi@gmail.com",
           [user.email],
           fail_silently=False
         )
         
   if selected_disease:
-
     context = {
       "selected_disease": selected_disease,
       "diseases": all_disease

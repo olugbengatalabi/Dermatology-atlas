@@ -16,11 +16,11 @@
 {% if messages %}
     
   {% for message in messages %}
-  <div class="messages {{message.tags}}" id="message">
-      <span>
+  <div class="messages text-center {{message.tags}}" id="message">
+      <!-- <span>
         <i class="fas fa-bell  bell alert dismissible" role="alertdialog" data-bs--dismiss="alert"  style='font-size:12px;color:red'>
         </i>
-      </span>
+      </span> -->
         
         <p>{{message}}</p>
       <span>

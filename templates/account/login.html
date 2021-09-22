@@ -17,7 +17,6 @@
     
     <form method="POST" action="{%url 'login'%}">
       {% csrf_token %}
-      <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
       <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
       {% include 'partials/_alerts.html' %}
       <label for="inputuername" class="visually-hidden">Username...</label>
@@ -36,11 +35,12 @@
       <button class="btnn btn-outline-secondary btn w-100 btn-lg" type="submit">
       Sign in
       </button>
+      <small><a href="{% url 'password_change1'%}">Forgot password?</a></small>
       <small class="sign-up-redirect">
         <p>Don't yet have an account?</p>
         <a class =" btn-outline-secondary btn btn-sm" href="{%url 'signup'%}"> sign up here</a>
       </small>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+      <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
     </form>
   </main>
 

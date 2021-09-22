@@ -13,7 +13,33 @@ social login with google
 Asynchronous like/upvote system
 use Swiperjs for the image viewing
 change the message background to tinted transparent with a colored border
+{% comment %} use google style card view for viewing the index page {% endcomment %}
+lazy loading of the images
+{% comment %} renove doctor from the title
+check the page titles
+temporarily remove the like feature  {% endcomment %}
+
+{% comment %} 
+  footer
+use a grid system/flex
+a contact us
+copyright
+social media pages
+check out kerpersky's footer
+use museosans for yourfooter {% endcomment %}
 
   misc
 contact us page that sends an email
 brief readme file
+
+ backend
+ {% comment %} make it such that going to the homepage redirects to index or remove index  {% endcomment %}
+ re add the account verification feature
+ forgot password
+ remove the token sent, success from git ignore
+ change the login parameters to email not username
+ ensure other file formates cannot be uploaded
+{% comment %} debug navbar {% endcomment %}
+
+at deployment
+change the verification link to ip address or your domain name

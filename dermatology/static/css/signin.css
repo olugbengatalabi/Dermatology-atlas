@@ -52,10 +52,9 @@ body {
   color: white;
   border: none;
   padding: .3em;
-  margin: .3em;
+  margin: .3em 0;
 }
 .btn:hover {
-
   color: white;
 }
 
@@ -67,7 +66,6 @@ small a{
   text-decoration: none;
   margin-top: 0;
 }
-a:hover {
-  color: white;
-  
+.btn-sm {
+  padding: 0.5rem 0.5rem;
 }
