@@ -127,3 +127,7 @@ form {
   margin: 0%;
 }
 
+/* button adjustments */
+.more-images{
+  font-size: 11px;
+}

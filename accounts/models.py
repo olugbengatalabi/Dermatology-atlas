@@ -10,6 +10,7 @@ class Profile(models.Model):
   created_at = models.DateTimeField(auto_now_add=True)
   is_verified = models.BooleanField(default=False)
   auth_token = models.CharField(max_length=100, default = "12345")
+  password_auth_token = models.CharField(max_length=100, default = "12345")
 
   def __str__(self):
     return self.user.username

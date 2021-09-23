@@ -5,7 +5,7 @@
         {% if user.is_authenticated %}
         <h3 class="full-name"><span>
           <i class='fas fa-user-md profile' style='font-size:18px;color:rgba(175, 45, 45, 0.918)'></i>
-        </span>Dr Talabi</h3>
+        </span>{{user.first_name}} {{user.last_name}}</h3>
         {%endif%}
       </div>
 
@@ -13,7 +13,7 @@
         <h3 class=" text-dark" href="#">Dermatology Atlas</h3>
       </div>
       <div class="hamburger display-sm" id="hamburger">
-        <i class='fas fa-hamburger' style='font-size:18px;color:rgba(175, 45, 45, 0.918)'> </i>
+        <i class='fas fa-hamburger' style='font-size:18px;color: rgb(223, 58, 58)'> </i>
       </div>
       
       <section class="display-lg">
@@ -32,7 +32,17 @@
             {% endif %}
             <a id = "logout" class="margin logout btn btn-sm btn-outline-secondary" >Logout</a>
           {% else %}
+          {% if not "index" in request.path %}
+          <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'index'%}">HOME</a>
+          {% endif %}
             
+          {% if not "dashboard" in request.path %}
+          <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'signup'%}">Signup</a>
+          {% endif %}
+          <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'login'%}">Login</a>
+          {% if not "contribution" in request.path %}
+          <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'contribution'%}">Contrtibute</a>
+          {% endif %}
           {% endif %} 
   
       </div>
@@ -46,7 +56,7 @@
           <div class="name-close">
             <div class="name-container">
               {% if user.is_authenticated %}
-                <h3 class="full-name">Dr Talabi</h3>
+                <h3 class="full-name">{{user.first_nae}} {{user.last_name}}</h3>
               {%endif%}
             </div>
             <div class="close" id="close">

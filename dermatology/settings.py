@@ -129,6 +129,7 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.SUCCESS: 'alert-success'
 }
+#? database
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"

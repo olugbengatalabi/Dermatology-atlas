@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-  Dashboard
+  {{user.first_name}}'s Dashboard
 {% endblock title %}
 
 
@@ -14,9 +14,9 @@
   <body class="bg-light">
     <div class="container">
       <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
-        <img class="me-3" src="../assets/brand/bootstrap-logo-white.svg" alt="" width="48" height="38">
+        <!-- <img class="me-3" src="../assets/brand/bootstrap-logo-white.svg" alt="" width="48" height="38"> -->
         <div class="lh-1">
-          <h1 class="h6 mb-0 text-dark lh-1">Dr {{user.last_name}}.</h1>
+          <h1 class="h6 mb-0 text-dark lh-1">{{user.first_name}} {{user.last_name}}.</h1>
           <small class ="btn btn-outline-secondary verified contribution">
             Verified
           </small>
