@@ -31,25 +31,27 @@ def signup_view(request):
           messages.error(request, "Username already exists")
           return redirect("signup")
         elif " " in username:
-          messages.error(request, "username cannot contain spaces, you can use an underscore '_' instead")
+          messages.error(request, "Username cannot contain spaces, you can use an underscore '_' instead")
           return redirect("signup")
         elif password_1 != password_2:
-          messages.info(request, "passwords are not identical")
+          messages.info(request, "Passwords are not identical")
           return redirect("signup")
         elif len(password_1) < 8:
-          messages.info(request, "password must be atleast 8 characters")
+          messages.info(request, "Password must be atleast 8 characters")
           return redirect("signup")
         else:
           user = User.objects.create_user(email = email, password = password_1, first_name = first_name, last_name= last_name, username = username)
           user.save()
           auth_token = str(uuid.uuid4())
           user.profile.auth_token = auth_token
+          user.profile.is_verified = True
           user.save()
-          verification_mail_sender(email, auth_token)
+          # verification_mail_sender(email, auth_token)
           messages.success(request, "You're now registered, kindly login")
           return redirect("login")
 
-
+    # find an custom email sender 
+    # change the messages to yure now regitered, chek your email to verify
       else:
         messages.error(request, "Name field(s) cannot be empty")
         return redirect("signup")
