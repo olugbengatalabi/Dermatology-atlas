@@ -50,9 +50,7 @@ a:hover{
   margin-bottom: 1rem;
   padding: 0.5rem;
 }
-.messages p {
-  text-transform: capitalize;
-}
+
 .alert {
   margin-bottom: 0;
 }

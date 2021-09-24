@@ -57,13 +57,13 @@ def contribution(request, disease_id = 0):
         upload_file_url = fs.url(filename)
         DiseaseImage.objects.create(disease = disease, user = user, extra_information = note, image = filename)
         messages.success(request, "Thank you for your contribution, expect an email from us soon")
-        send_mail(
-          "Dermatology Atlas thanks you for your contribution",
-          "Thank you for your contribution, our team will verify the image.",
-          "oluwagbengatalabi@gmail.com",
-          [user.email],
-          fail_silently=False
-        )
+        # send_mail(
+        #   "Dermatology Atlas thanks you for your contribution",
+        #   "Thank you for your contribution, our team will verify the image.",
+        #   "oluwagbengatalabi@gmail.com",
+        #   [user.email],
+        #   fail_silently=False
+        # )
         
   if selected_disease:
     context = {

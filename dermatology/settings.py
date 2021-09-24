@@ -130,6 +130,25 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'alert-success'
 }
 #? database
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dermatology_test',
+        'USER': 'postgres',
+        'PASSWORD': 'gbeng97a',
+        'HOST': 'localhost'
+    }
+}
+
+
+# ? Email
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "oluwagbengatalabi@gmail.com"
+EMAIL_HOST_PASSWORD = "gbeng97a"
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_PORT = 587
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
@@ -138,4 +157,4 @@ MEDIA_URL = "/media/"
 try:
     from .local_settings import *
 except ImportError:
-    pass
+    pass 

@@ -17,17 +17,10 @@
     
   {% for message in messages %}
   <div class="messages text-center {{message.tags}}" id="message">
-      <!-- <span>
-        <i class="fas fa-bell  bell alert dismissible" role="alertdialog" data-bs--dismiss="alert"  style='font-size:12px;color:red'>
-        </i>
-      </span> -->
-        
         <p>{{message}}</p>
       <span>
         <i class=" close-btn fas fa-times" id="close-btn" style="color:red"></i>
       </span>
-    
-      
   </div>
   {% endfor %}
 

@@ -101,6 +101,9 @@ form {
   .blog-header-logo {
     visibility: hidden;
   }
+  main {
+    padding: 0.5rem;
+  }
 }
 
 
@@ -127,3 +130,7 @@ form {
   margin: 0%;
 }
 
+/* button adjustments */
+.more-images{
+  font-size: 11px;
+}

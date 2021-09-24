@@ -101,6 +101,9 @@ form {
   .blog-header-logo {
     visibility: hidden;
   }
+  main {
+    padding: 0.5rem;
+  }
 }
 
 
