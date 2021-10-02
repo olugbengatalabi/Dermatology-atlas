@@ -26,9 +26,9 @@ a {
   color: black;
   
 }
-a:hover{
+/* a:hover{
   color:rgba(175, 45, 45, 0.918) ;
-}
+} */
 .pointer{
   cursor: pointer;
 }
@@ -120,7 +120,9 @@ a:hover{
   text-align: center;
   display: inline;
 }
-
+.title{
+  color: rgb(47, 46, 65);;
+}
 .blog-header-logo:hover {
   text-decoration: none;
 }
@@ -128,9 +130,8 @@ a:hover{
   align-items: center;
 }
 
-
 .btn-outline-secondary:hover {
-  background-color: black;
+  background-color: rgb(47, 46, 65);
   color: white;
 }
 
@@ -148,6 +149,10 @@ a:hover{
 }
 .margin {
   margin: 0 0.25rem 0 0.25rem;
+}
+.account-group > a {
+  display: flex;
+
 }
 .display-sm {
   display: none;

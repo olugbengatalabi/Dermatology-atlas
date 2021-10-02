@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "diseases.apps.DiseasesConfig",
     'django.contrib.auth',
     'accounts.apps.AccountsConfig',
+    'mypages.apps.MypagesConfig',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -130,7 +131,6 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'alert-success'
 }
 #? database
-
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")

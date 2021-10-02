@@ -16,13 +16,13 @@
 <main>
   <div class="album py-5 bg-light">
     <div class="container">
-      <form method="GET" action="{% url 'index'%}" class="search-group" >
+      <form method="GET" action="{% url 'index'%}" class="search-group">
         <input class='search-bar' type="text" name="search" placeholder="Search..">
       </form>
       {% include 'partials/_alerts.html' %}
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         {% if diseases %}
-          {% for disease in diseases %}
+          {% for disease in diseases %} 
           <div class="">
             <div class="card shadow-sm">
               <img src="{{disease.thumbnail.image.url}}" class="bd-placeholder-img card-img-top" width="100%" height="225" role="img"
@@ -37,7 +37,7 @@
                     <button class=" btn btn-sm btn-outline-secondary upvote" id ={{disease.id}}><i class ='fas fa-thumbs-up'></i> upvote</button>
                   </div> -->
                   <div class="">
-                    <a class="more-images btn btn-sm btn-outline-secondary" href="{%url 'single' disease.id  %}">More Images</a>
+                    <a class="more-images btn btn-sm btn-outline-secondary" href="{%url 'single' disease.id  %}">More Images<span> <i class="fas margin fa-plus"></i></span></a>
                     <button class=" btn btn-sm upvote" id ={{disease.id}}><i class ='fas fa-star'></i>..</button>
                   </div>
                   <!-- <div class="btn-group">
@@ -102,14 +102,15 @@
     
         </ul>
         {% else %}
-    
         {% endif %}
     
     
       </div>
     </div>
   </div>
-  
+  <a href="#" class="scrollup" id="scroll-up">
+    <i class="fas fa-arrow-up scrollup__icon"></i>
+  </a>
 </main>
 
 {% endblock content %}

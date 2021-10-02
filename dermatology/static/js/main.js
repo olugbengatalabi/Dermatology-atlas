@@ -87,6 +87,13 @@ if (msgCloseBtn) {
   msgCloseBtn.addEventListener("click", closer); 
 }
 
+window.addEventListener('scroll', () => {
+  scrollElement = document.getElementById('scroll-up');
+  if (this.scrollY >=560) {
+    scrollElement.classList.add('show-scroll');
+  }
+  else scrollElement.classList.remove('show-scroll')
+})
 
 // {% if diseases %}
       

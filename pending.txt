@@ -34,12 +34,22 @@ brief readme file
 
  backend
  {% comment %} make it such that going to the homepage redirects to index or remove index  {% endcomment %}
- re add the account verification feature
+ {% comment %} re add the account verification feature
  forgot password
  remove the token sent, success from git ignore
  change the login parameters to email not username
- ensure other file formates cannot be uploaded
+ ensure other file formates cannot be uploaded {% endcomment %}
 {% comment %} debug navbar {% endcomment %}
 
-at deployment
+{% comment %} at deployment
 change the verification link to ip address or your domain name
+add more items to the hamburger menu
+add a landing page 
+continue without signing in the login and signup page.
+remove the home button that shows in the navebar
+add icon to the button
+from your porfolio project, add the bottom to scroll to top
+ {% endcomment %}
+
+ redisgn the scroll the bar
+ add your socials link to the footer

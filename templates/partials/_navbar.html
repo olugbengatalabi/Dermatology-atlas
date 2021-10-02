@@ -4,7 +4,7 @@
       <div class="display-lg">
         {% if user.is_authenticated %}
         <h3 class="full-name"><span>
-          <i class='fas fa-user-md profile' style='font-size:18px;color:rgba(175, 45, 45, 0.918)'></i>
+          <i class='fas fa-user-md profile' style='font-size:18px;color: rgb(47, 46, 65)'></i>
         </span>{{user.first_name}} {{user.last_name}}</h3>
         {%endif%}
       </div>
@@ -13,35 +13,34 @@
         <h3 class=" text-dark" href="#">Dermatology Atlas</h3>
       </div>
       <div class="hamburger display-sm" id="hamburger">
-        <i class='fas fa-hamburger' style='font-size:18px;color: rgb(223, 58, 58)'> </i>
+        <i class='fas fa-hamburger' style='font-size:18px;color:  rgb(47, 46, 65)'> </i>
       </div>
-      
       <section class="display-lg">
         <div class=" account-group col-4 d-flex align-items-center">
           {% if user.is_authenticated %}
             {% if not "index" in request.path %}
-            <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'index'%}">HOME</a>
+            <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'index'%}">HOME <span><i class="fas margin fa-home"></i></span></a>
             {% endif %}
               
             {% if not "dashboard" in request.path %}
-            <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'dashboard'%}">Dashboard</a>
+            <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'dashboard'%}">Dashboard <span><i class="fas margin fa-chart-bar"></i></span></a>
             {% endif %}
             
             {% if not "contribution" in request.path %}
-            <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'contribution'%}">Contrtibute</a>
+            <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'contribution'%}">Contribute <span> <i class="fas margin fa-plus-circle"></i></span></a>
             {% endif %}
-            <a id = "logout" class="margin logout btn btn-sm btn-outline-secondary" >Logout</a>
+            <a id = "logout" class="margin logout btn btn-sm btn-outline-secondary" >Logout <span><i class="fas margin fa-sign-out-alt"></i></span></a>
           {% else %}
-          {% if not "index" in request.path %}
-          <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'index'%}">HOME</a>
+          {% if not "/" in request.path %}
+          <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'index'%}">HOME <span><i class="fas margin fa-home"></i></span></a>
           {% endif %}
             
           {% if not "dashboard" in request.path %}
-          <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'signup'%}">Signup</a>
+          <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'signup'%}">Signup <span><i class="fas margin fa-user-plus"></i></span></a>
           {% endif %}
-          <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'login'%}">Login</a>
+          <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'login'%}">Login <span><i class="fas margin fa-sign-in-alt"></i></span></a>
           {% if not "contribution" in request.path %}
-          <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'contribution'%}">Contrtibute</a>
+          <a class="margin btn btn-sm btn-outline-secondary" href="{%url 'contribution'%}">Contrtibute <span> <i class="fas margin fa-plus-circle"></i></span></a>
           {% endif %}
           {% endif %} 
   
@@ -68,30 +67,33 @@
             {% if user.is_authenticated %}
             {% if not "index" in request.path %}
             <li>
-              <a class="" href="{%url 'index'%}">HOME</a>
+              <a class="" href="{%url 'index'%}">HOME <span><i class="fas margin fa-home"></i></span></a>
             </li>
             {% endif %}
       
             {% if not "dashboard" in request.path %}
             <li>
-              <a class="" href="{%url 'dashboard'%}">Dashboard</a>
+              <a class="" href="{%url 'dashboard'%}">Dashboard <span><i class="fas margin fa-chart-bar"></i></span></a>
             </li>
               {% endif %}
             {% if not "contribution" in request.path %}
             <li>
-              <a class="" href="{%url 'contribution'%}">Contrtibute</a>
+              <a class="" href="{%url 'contribution'%}">Contrtibute<span> <i class="fas margin fa-plus-circle"></i></span></a>
             </li>
             <li>
-              <a class="" href="{%url 'contribution'%}">Contact Us</a>
+              <a class="" href="{%url 'contribution'%}">Contact Us <span><i class="fas margin fa-phone"></i></span></a>
             </li>
             {% endif %}
-              <a id="logout" class="logout margin btn btn-sm btn-outline-secondary">Logout</a>
+              <a id="logout" class="logout margin btn btn-sm btn-outline-secondary">Logout <span><i class="fas margin fa-sign-out-alt"></i></span></a>
             {% else %}
               <li>
-                <a class=" " href="{%url 'signup'%}">Sign Up</a>
+                <a class=" " href="{%url 'signup'%}">Sign Up<span><i class="fas margin fa-user-plus"></i></span></a>
               </li>
               <li>
-                <a class="" href="{%url 'login'%}">Login</a> 
+                <a class="" href="{%url 'login'%}">Login<span><i class="fas margin fa-sign-in-alt"></i></span></a> 
+              </li>
+              <li>
+                <a class="" href="{%url 'contribution'%}">Contrtibute <span> <i class="fas margin fa-plus-circle"></i></span></a>
               </li>
             {% endif %}
           </ul>
@@ -103,4 +105,3 @@
   </header>
 
   
-

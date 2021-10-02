@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;600&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0%;
@@ -10,6 +12,7 @@
 body{
   box-sizing: border-box;
   margin: 0%;
+  padding: 0%;
   background-color: rgb(248, 246, 242);
   overflow-x:visible
 }
@@ -23,10 +26,18 @@ a {
   color: black;
   
 }
-a:hover{
+/* a:hover{
   color:rgba(175, 45, 45, 0.918) ;
+} */
+.pointer{
+  cursor: pointer;
 }
-
+.grid {
+  display: grid;
+}
+.flex {
+  display: flex;
+}
 /* messages */
 
 .messages {
@@ -37,7 +48,9 @@ a:hover{
   width: 100%;
   border-radius: 0.45rem;
   margin-bottom: 1rem;
+  padding: 0.5rem;
 }
+
 .alert {
   margin-bottom: 0;
 }
@@ -107,7 +120,9 @@ a:hover{
   text-align: center;
   display: inline;
 }
-
+.title{
+  color: rgb(47, 46, 65);;
+}
 .blog-header-logo:hover {
   text-decoration: none;
 }
@@ -115,16 +130,15 @@ a:hover{
   align-items: center;
 }
 
-
 .btn-outline-secondary:hover {
-  background-color: black;
+  background-color: rgb(47, 46, 65);
   color: white;
 }
 
 
 
 .naver {
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 1rem 2rem;
   display: flex;
   flex-direction:row;
@@ -136,6 +150,10 @@ a:hover{
 .margin {
   margin: 0 0.25rem 0 0.25rem;
 }
+.account-group > a {
+  display: flex;
+
+}
 .display-sm {
   display: none;
 }
@@ -143,42 +161,24 @@ a:hover{
   opacity: 0;
 }
 
-@media (min-width: 1000px) {
-  .btn-group>a :hover {
-    background-color: rgb(41, 39, 39);
-  }  
 
-  .list {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-  }
+.btn-group>a :hover {
+  background-color: rgb(41, 39, 39);
+} 
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
 
-  .other-links>ul {
-    margin: 1em 13em 2em 13em;
-    justify-content: space-evenly;
-    align-items: center;
-    justify-self: center;
-    align-self: center;
-    padding-left: 9em;
-    padding-right: 9em;
-  }
-
-
-  .social-media-links>ul {
-    margin: 1em 13em 2em 13em;
-    justify-content: space-evenly;
-    align-items: center;
-    justify-self: center;
-    align-self: center;
-    display: flex;
-    
-  }
-
-  .social-media-links * li {
-    font-size: 30px;
-    list-style: none;
-  }
+.other-links>ul {
+  margin: 1em 13em 2em 13em;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+  padding-left: 9em;
+  padding-right: 9em;
 }
 
 
@@ -215,6 +215,9 @@ a:hover{
     display: flex;
     justify-content: space-between;
   }
+  .btn-group>a :hover {
+    background-color: transparent;
+  } 
   .name-container {
     width: 100%;
     text-align: center;
@@ -231,7 +234,6 @@ a:hover{
     width: auto;
     background-color:rgba(68, 67, 67, 0.398);
   }
-
 }
 /* generic */
 .btn:focus, .btn:active{
@@ -247,28 +249,59 @@ a:hover{
 
 /* footer */
 
-footer * {
-  font-weight: 300;
-}
 footer h3 {
   font-size: 18px;
-
 }
-footer p {
-  font-size: 11px;
+footer * {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
 }
 .footer1 {
   background-color: rgb(44, 44, 44);
   padding: 2em;
 }
-.footer1 p, .footer1 h3{
-  color: white;
+.footer-header {
+  font-family: "museomoderno", "poppins" ;
+  margin-bottom: 2rem;
+  color: rgb(230, 125, 125);
+}
+.footer-content {
+  justify-content: space-between;
+  flex-direction: column;
+}
+.about-us {
+  max-width: 400px;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.7;
+  
+}
+.contact-us-header{
+  font-size: 13px;
+  font-weight: 300;
+  color: rgb(230, 125, 125);
+}
+
+.social-contacts :nth-child(2){
+  padding: 0 0.5rem;
+}
+.social-contacts a i{
+  transition: color 50ms ease-in;
+}
+.social-contacts a i:hover{
+  color: rgb(230, 125, 125);
+}
+.copyright {
+  text-align: end;
+  font-size: 10px;
 }
 
 .footer2 {
-  padding: 0.2em;
-
-}
-.footer2 > p {
   color: black;
+  font-weight: 300;
+  font-size: 10px;
+  text-align:center;
+}
+.nigerian-icon, .nigeria{
+  color: green;
 }

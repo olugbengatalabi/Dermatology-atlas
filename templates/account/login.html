@@ -17,7 +17,7 @@
     
     <form method="POST" action="{%url 'login'%}">
       {% csrf_token %}
-      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+      <h1 class="h3 mb-3 fw-normal">Sign in</h1>
       {% include 'partials/_alerts.html' %}
       <label for="inputuername" class="visually-hidden">Username...</label>
       <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
@@ -25,20 +25,14 @@
 
       <label for="inputPassword" class="visually-hidden">Password</label>
       <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required autofocus>
-
-
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <button class="btnn btn-outline-secondary btn w-100 btn-lg" type="submit">
+      <small ><a class="text-muted" href="{% url 'password_change1'%}">Forgot password?</a></small>
+      <button class=" btn-outline-secondary btn w-100 btn-lg" type="submit">
       Sign in
       </button>
-      <small><a href="{% url 'password_change1'%}">Forgot password?</a></small>
       <small class="sign-up-redirect">
-        <p>Don't yet have an account?</p>
-        <a class =" btn-outline-secondary btn btn-sm" href="{%url 'signup'%}"> sign up here</a>
+        <p class="text-muted">Don't yet have an account?</p>
+        <a class =" btn-outline-secondary btn " href="{%url 'signup'%}"> sign up</a>
+        <a class ="" href="{%url 'index'%}"> Or Continue without one</a>
       </small>
       <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
     </form>
