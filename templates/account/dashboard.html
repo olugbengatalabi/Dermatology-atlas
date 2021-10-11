@@ -41,11 +41,7 @@
                 </tr>
               </thead>
               {% for image in image_list %}
-              <tbody 
-              {% if not forloop.counter|divisibleby:"2" %}
-                style = 'background-color:rgba(223, 223, 223, 0.172); border: none'
-              {% endif %}
-                >
+              <tbody>
                 <tr>
                   <td>{{forloop.counter}}</td>
                   <td><img src="{{image.image.url}}" alt="" width="30" height="30"></td>

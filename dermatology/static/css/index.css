@@ -99,7 +99,7 @@ form {
   position: fixed;
   right: 1rem;
   bottom: -20%;
-  background-color: rgb(102, 82, 204);
+  background-color:rgb(225, 68, 68);
   padding: 0.5rem 0.5rem;
   border-radius: .4rem;
   z-index: 2;
@@ -107,7 +107,7 @@ form {
   
 }
 .scrollup:hover {
-  background-color: rgb(102, 82, 204);
+  background-color:rgb(230, 102, 102);
 }
 .scrollup__icon {
   font-size: 1.5rem;

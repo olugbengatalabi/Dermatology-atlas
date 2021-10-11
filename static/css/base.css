@@ -38,6 +38,7 @@ a {
 .flex {
   display: flex;
 }
+.profile{ margin-right: 5rem;}
 /* messages */
 
 .messages {
